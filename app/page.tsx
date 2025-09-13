@@ -17,7 +17,7 @@ const user = {
       retryConfig: { retryCount: 3, retryDelay: 1000 },
     }}>
       <VeltComments textMode={false} />
-      <MainLayout />;
+      <MainLayout />
     </VeltProvider>
   );
 }

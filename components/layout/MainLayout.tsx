@@ -9,7 +9,7 @@ export function MainLayout() {
   useSetDocument("linearStyleEditor", { documentName: "linearStyleEditor" });
 
   return (
-    <div className="min-h-screen bg-gray-950 flex">
+    <div className="max-h-screen bg-gray-950 flex">
       <Sidebar />
       <MainContent />
       <RightSidebar />
