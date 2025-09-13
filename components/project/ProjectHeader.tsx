@@ -160,7 +160,7 @@ export function ProjectHeader() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <VeltNotificationsTool />
+          <VeltNotificationsTool darkMode={true} />
           <Button variant="ghost" size="sm" className="text-gray-400">
             <Share className="w-4 h-4" />
           </Button>
@@ -171,7 +171,7 @@ export function ProjectHeader() {
             <MoreHorizontal className="w-4 h-4" />
           </Button>
           <VeltSidebarButton darkMode={true} />
-          <VeltCommentsSidebar />
+          <VeltCommentsSidebar darkMode={true} />
         </div>
       </div>
     </div>
