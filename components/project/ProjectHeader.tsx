@@ -36,7 +36,6 @@ import { useEffect, useMemo } from "react";
 export function ProjectHeader() {
   const { user, setUser } = useUserStore();
   const { client } = useVeltClient();
-  console.log("user in header", client, user);
   const predefinedUsers = useMemo(
     () =>
       userIds.map((uid, index) => {
