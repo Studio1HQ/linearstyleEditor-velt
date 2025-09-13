@@ -24,7 +24,7 @@ A collaborative email composer built with Next.js, React, Tailwind CSS, and [Vel
 - **Collaboration**: [Velt](https://velt.dev/)
 - **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **Other**: [Radix UI](https://www.radix-ui.com/), [TanStack React Query](https://tanstack.com/query/latest)
+- **Other**: [Radix UI](https://www.radix-ui.com/)
 
 ---
 
