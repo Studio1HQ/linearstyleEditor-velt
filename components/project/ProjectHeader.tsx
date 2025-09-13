@@ -88,7 +88,7 @@ export function ProjectHeader() {
           <div className="bg-yellow-500/40 p-1 rounded">
             <Database className="text-yellow-400 w-4 h-4" />
           </div>
-          KitOps DevRel
+           DevRel
           <ChevronRight className="w-4 h-4 text-gray-500" />
           KST-12
           <Star className="w-4 h-4 text-gray-400" />

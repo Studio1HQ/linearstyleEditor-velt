@@ -132,7 +132,7 @@ export function Sidebar() {
           >
             <Database className="w-4 h-4 text-orange-500" />
             <span className={`${isSidebarExpanded ? "block" : "hidden"}`}>
-              KitOps DevRel
+               DevRel
             </span>
           </Button>
         </div>
