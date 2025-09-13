@@ -25,6 +25,7 @@ import {
   useVeltClient,
   VeltCommentsSidebar,
   VeltNotificationsTool,
+  VeltPresence,
   VeltSidebarButton,
 } from "@veltdev/react";
 import { names, userIds, useUserStore } from "@/helper/userdb";
@@ -220,7 +221,7 @@ export function ProjectHeader() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-
+          <VeltPresence />
           <VeltNotificationsTool darkMode={theme === "dark"} />
           <ThemeToggleButton />
 
