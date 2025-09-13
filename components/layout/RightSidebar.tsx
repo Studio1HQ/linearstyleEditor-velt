@@ -29,9 +29,9 @@ export function RightSidebar() {
         <div>
           <Button
             variant="ghost"
-            className="w-full justify-start gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+            className="w-full text-gray-600 justify-start dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-start justify-start gap-2">
               <Clock className="w-4 h-4 text-orange-400" />
               <p>In Progress</p>
             </div>
@@ -39,18 +39,22 @@ export function RightSidebar() {
 
           <Button
             variant="ghost"
-            className="w-full justify-start gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+            className="w-full text-gray-600 justify-start dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
           >
-            <AlertCircle className="w-4 h-4" />
-            <span className="hidden sm:block">Set priority</span>
+            <div className="flex items-start justify-start gap-2">
+              <AlertCircle className="w-4 h-4" />
+              <span className="hidden sm:block">Set priority</span>
+            </div>
           </Button>
 
           <Button
             variant="ghost"
-            className="w-full justify-start gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+            className="w-full text-gray-600 justify-start dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
           >
-            <User className="w-4 h-4" />
-            <span className="hidden sm:block">Assign</span>
+            <div className="flex items-start justify-start gap-2">
+              <User className="w-4 h-4" />
+              <span className="hidden sm:block">Assign</span>
+            </div>
           </Button>
         </div>
 
@@ -63,10 +67,12 @@ export function RightSidebar() {
           </h3>
           <Button
             variant="ghost"
-            className="w-full justify-start gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+            className="w-full text-gray-600 justify-start dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
           >
-            <Tag className="w-4 h-4" />
-            <span className="hidden sm:block">Add label</span>
+            <div className="flex items-start justify-start gap-2">
+              <Tag className="w-4 h-4" />
+              <span className="hidden sm:block">Add label</span>
+            </div>
           </Button>
         </div>
 
@@ -77,12 +83,17 @@ export function RightSidebar() {
           <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300 hidden sm:block">
             Project
           </h3>
-          <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 cursor-pointer">
-            <Box className="w-4 h-4" />
-            <span className="text-sm  text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200  hidden sm:block">
-              Social Media
-            </span>
-          </div>
+          <Button
+            variant="ghost"
+            className="w-full text-gray-600 justify-start dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+          >
+            <div className="flex items-start justify-start gap-2">
+              <Box className="w-4 h-4" />
+              <span className="text-sm  text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200  hidden sm:block">
+                Social Media
+              </span>
+            </div>
+          </Button>
         </div>
       </div>
     </div>

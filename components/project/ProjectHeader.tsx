@@ -113,11 +113,25 @@ export function ProjectHeader() {
   const { theme } = useTheme();
 
   return (
-    <div className={`p-6 ${theme === "dark" ? "bg-[#121212]" : "bg-white"} border-b ${theme === "dark" ? "border-gray-700" : "border-gray-300"}`}>
+    <div
+      className={`p-6 ${
+        theme === "dark" ? "bg-[#121212]" : "bg-white"
+      } border-b ${theme === "dark" ? "border-gray-700" : "border-gray-300"}`}
+    >
       <div className="flex flex-col sm:flex-row items-center justify-between">
         {/* Left Section: Back Button & Project Info */}
-        <div className={`flex items-center gap-3 w-full sm:w-auto ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-          <Button variant="ghost" size="sm" className={`${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+        <div
+          className={`flex items-center gap-3 w-full sm:w-auto ${
+            theme === "dark" ? "text-gray-300" : "text-gray-600"
+          }`}
+        >
+          <Button
+            variant="ghost"
+            size="sm"
+            className={`${
+              theme === "dark" ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
             <ArrowLeft className="w-4 h-4" />
           </Button>
           <div className="bg-yellow-500/40 p-1 rounded">
@@ -126,8 +140,16 @@ export function ProjectHeader() {
           DevRel
           <ChevronRight className="w-4 h-4 text-gray-500" />
           KST-12
-          <Star className={`w-4 h-4 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`} />
-          <Ellipsis className={`w-4 h-4 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`} />
+          <Star
+            className={`w-4 h-4 ${
+              theme === "dark" ? "text-gray-400" : "text-gray-600"
+            }`}
+          />
+          <Ellipsis
+            className={`w-4 h-4 ${
+              theme === "dark" ? "text-gray-400" : "text-gray-600"
+            }`}
+          />
         </div>
 
         {/* Right Section: Share, Star, More, and Sidebar Button */}
@@ -137,7 +159,7 @@ export function ProjectHeader() {
               <Button
                 variant="outline"
                 size="sm"
-                className={`flex items-center space-x-2 h-8 ${theme === "dark" ? "dark:bg-[#2f3349] dark:border dark:border-white/30" : "bg-gray-100 border border-gray-300"}`}
+                className="flex items-center space-x-2 h-8 bg-white  text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200  dark:bg-[#2f3349] dark:border dark:border-white/30 dark:!bg-[#121212] dark:hover:!bg-gray-700"
               >
                 <Avatar className="w-5 h-5">
                   <AvatarImage
@@ -154,14 +176,17 @@ export function ProjectHeader() {
                 <ChevronDown size={14} />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className={`${theme === "dark" ? "dark:bg-[#2f3349]" : "bg-white"} w-64`}>
+            <DropdownMenuContent
+              align="end"
+              className="w-64 bg-white  text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200  dark:bg-[#121212] dark:border dark:border-white/30"
+            >
               <DropdownMenuLabel>Select User</DropdownMenuLabel>
-              <DropdownMenuSeparator className={`${theme === "dark" ? "dark:bg-white/40" : "bg-gray-200"}`} />
+              <DropdownMenuSeparator className="dark:bg-white/40" />
               {predefinedUsers.map((Currentuser) => (
                 <DropdownMenuItem
                   key={Currentuser.uid}
                   onClick={() => setUser(Currentuser)}
-                  className={`flex items-center space-x-3 p-3 cursor-pointer ${theme === "dark" ? "hover:dark:bg-[#515881]" : "hover:bg-gray-200"}`}
+                  className="flex items-center space-x-3 p-3 cursor-pointer hover:!bg-gray-100 hover:dark:!bg-[#121212] dark:hover:!bg-gray-700"
                 >
                   <Avatar className="w-8 h-8">
                     <AvatarImage
@@ -173,13 +198,13 @@ export function ProjectHeader() {
                     </AvatarFallback>
                   </Avatar>
                   <div className="flex-1 min-w-0">
-                    <div className={`text-sm font-medium ${theme === "dark" ? "text-white/70" : "text-gray-900"}`}>
+                    <div className="text-sm font-medium text-gray-900 dark:text-white/70">
                       {Currentuser.displayName}
                     </div>
-                    <div className={`text-xs ${theme === "dark" ? "text-white/60" : "text-gray-500"}`}>
+                    <div className="text-xs text-gray-500 dark:text-white/60">
                       {Currentuser.email}
                     </div>
-                    <div className={`text-xs ${theme === "dark" ? "text-white/50" : "text-gray-400"}`}>
+                    <div className="text-xs text-gray-400 dark:text-white/50">
                       User
                     </div>
                   </div>
@@ -189,22 +214,41 @@ export function ProjectHeader() {
                 </DropdownMenuItem>
               ))}
               <DropdownMenuSeparator />
-              <DropdownMenuItem className={`flex items-center space-x-2 text-blue-600 ${theme === "dark" ? "hover:dark:bg-[#515881]" : "hover:bg-gray-200"}`}>
+              <DropdownMenuItem className="flex items-center space-x-2 text-blue-600 hover:dark:bg-[#515881] ">
                 <User size={16} />
-                <span className={`hover:${theme === "dark" ? "dark:text-white/70" : "text-gray-600"}`}>Manage Users</span>
+                <span className="hover:dark:text-white/70">Manage Users</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+
           <VeltNotificationsTool darkMode={theme === "dark"} />
           <ThemeToggleButton />
 
-          <Button variant="ghost" size="sm" className={`${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+          <Button
+            variant="ghost"
+            size="sm"
+            className={`${
+              theme === "dark" ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
             <Share className="w-4 h-4" />
           </Button>
-          <Button variant="ghost" size="sm" className={`${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+          <Button
+            variant="ghost"
+            size="sm"
+            className={`${
+              theme === "dark" ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
             <Star className="w-4 h-4" />
           </Button>
-          <Button variant="ghost" size="sm" className={`${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+          <Button
+            variant="ghost"
+            size="sm"
+            className={`${
+              theme === "dark" ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
             <MoreHorizontal className="w-4 h-4" />
           </Button>
           <VeltSidebarButton darkMode={theme === "dark"} />

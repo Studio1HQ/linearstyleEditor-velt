@@ -70,9 +70,9 @@ export const ThemeToggleButton: React.FC = () => {
     >
       {theme === "light" ? (
         <Moon
-          className="text-[#4e4e4e] dark:text-gray-200 !hover:text-white"
+          className="text-[#7d8187] dark:text-gray-200 hover:!text-[#6b6b6b]"
           size={20}
-          color="#000000"
+          color="#7d8187"
         />
       ) : (
         <Sun
