@@ -82,7 +82,7 @@ const RichTextEditor = () => {
         <Button
           variant="outline"
           onClick={onClickComments}
-          className="bg-[#101113] p-2 flex items-center justify-center rounded-full focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-300"
+          className="bg-[#b056ef] hover:bg-[#a22ff5] p-2 flex items-center justify-center rounded-full focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-300"
         >
           <MessageCircle color="white" />
         </Button>
