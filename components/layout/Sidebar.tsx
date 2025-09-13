@@ -52,7 +52,7 @@ export function Sidebar() {
     <div
       className={`${
         isSidebarExpanded ? "w-64" : "w-20"
-      } bg-gray-900 border-r border-gray-800 flex flex-col transition-all duration-300 ease-in-out max-h-screen overflow-scroll`}
+      } bg-[#101113] border-r border-gray-800 flex flex-col transition-all duration-300 ease-in-out max-h-screen overflow-scroll hide-scrollbar`}
     >
       {/* Header */}
       <div className="p-4 border-b border-gray-800">

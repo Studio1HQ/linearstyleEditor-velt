@@ -23,7 +23,7 @@ export function CommentBox() {
           placeholder="Leave a comment..."
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          className="min-h-[100px] resize-none bg-gray-800 border-gray-700 text-gray-200 placeholder-gray-500"
+          className="min-h-[100px] resize-none bg-[#101113] border-gray-700 text-gray-200 placeholder-gray-500"
         />
       </div>
       

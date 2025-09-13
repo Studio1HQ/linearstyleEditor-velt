@@ -71,3 +71,6 @@
   color: hsl(210 40% 70%);
   text-decoration: underline;
 }
+.hide-scrollbar::-webkit-scrollbar{
+  display: none;
+}

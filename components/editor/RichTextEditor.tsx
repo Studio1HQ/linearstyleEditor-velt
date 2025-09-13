@@ -71,7 +71,7 @@ const RichTextEditor = () => {
   };
 
   return (
-    <div className="border-gray-700 overflow-hidden w-full min-h-56 p-4 border-2 border-dashed border-white/30 rounded-lg focus-within:border-blue-500 focus-within:bg-blue-50/50 dark:border-[1px] dark:focus-within:bg-[#2f3349] dark:focus-within:border-white text-white">
+    <div className="border-gray-700 overflow-hidden hide-scrollbar w-full min-h-56 p-4 border-2 border-dashed border-white/30 rounded-lg focus-within:border-[#101113] focus-within:bg-[#101113] dark:border-[1px] dark:focus-within:bg-[#101113] dark:focus-within:border-white text-white">
       <EditorToolbar editor={editor} />
       {/* Bubble Menu with comment button */}
       {editor && (
@@ -80,7 +80,7 @@ const RichTextEditor = () => {
             <Button
               variant="outline"
               onClick={onClickComments}
-              className="bg-[#b056ef] p-2 flex items-center justify-center rounded-full"
+              className="bg-[#101113] p-2 flex items-center justify-center rounded-full"
             >
               <MessageCircle color="white" />
             </Button>
