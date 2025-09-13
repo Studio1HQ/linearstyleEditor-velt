@@ -27,129 +27,112 @@ export function EditorToolbar({ editor }: EditorToolbarProps) {
   }
 
   return (
-    <div>
-      <div className="flex items-center gap-1">
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`editor-button ${
-            editor.isActive("bold") ? "is-active" : ""
-          }`}
-          onClick={() => editor.chain().focus().toggleBold().run()}
-        >
-          <Bold className="w-4 h-4" />
-        </Button>
+    <div className="flex items-center gap-1">
+      <Button
+        variant="ghost"
+        size="sm"
+        className={`editor-button ${editor.isActive("bold") ? "is-active text-blue-500" : "text-gray-900 dark:text-white"}  hover:bg-gray-00 dark:hover:bg-gray-700`}
+        onClick={() => editor.chain().focus().toggleBold().run()}
+      >
+        <Bold className="w-4 h-4" />
+      </Button>
 
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`editor-button ${
-            editor.isActive("italic") ? "is-active" : ""
-          }`}
-          onClick={() => editor.chain().focus().toggleItalic().run()}
-        >
-          <Italic className="w-4 h-4" />
-        </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        className={`editor-button ${editor.isActive("italic") ? "is-active text-blue-500" : "text-gray-900 dark:text-white"} hover:bg-gray-200 dark:hover:bg-gray-700`}
+        onClick={() => editor.chain().focus().toggleItalic().run()}
+      >
+        <Italic className="w-4 h-4" />
+      </Button>
 
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`editor-button ${
-            editor.isActive("underline") ? "is-active" : ""
-          }`}
-        >
-          <Underline className="w-4 h-4" />
-        </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        className={`editor-button ${editor.isActive("underline") ? "is-active text-blue-500" : "text-gray-900 dark:text-white"} hover:bg-gray-200 dark:hover:bg-gray-700`}
+        // onClick={() => editor.chain().focus().toggleUnderline().run()}
+      >
+        <Underline className="w-4 h-4" />
+      </Button>
 
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`editor-button ${
-            editor.isActive("strike") ? "is-active" : ""
-          }`}
-          onClick={() => editor.chain().focus().toggleStrike().run()}
-        >
-          <Strikethrough className="w-4 h-4" />
-        </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        className={`editor-button ${editor.isActive("strike") ? "is-active text-blue-500" : "text-gray-900 dark:text-white"} hover:bg-gray-200 dark:hover:bg-gray-700`}
+        onClick={() => editor.chain().focus().toggleStrike().run()}
+      >
+        <Strikethrough className="w-4 h-4" />
+      </Button>
 
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`editor-button ${
-            editor.isActive("code") ? "is-active" : ""
-          }`}
-          onClick={() => editor.chain().focus().toggleCode().run()}
-        >
-          <Code className="w-4 h-4" />
-        </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        className={`editor-button ${editor.isActive("code") ? "is-active text-blue-500" : "text-gray-900 dark:text-white"} hover:bg-gray-200 dark:hover:bg-gray-700`}
+        onClick={() => editor.chain().focus().toggleCode().run()}
+      >
+        <Code className="w-4 h-4" />
+      </Button>
 
-        <Separator orientation="vertical" className="h-6 mx-1" />
+      <Separator orientation="vertical" className="h-6 mx-1" />
 
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`editor-button ${
-            editor.isActive("bulletList") ? "is-active" : ""
-          }`}
-          onClick={() => editor.chain().focus().toggleBulletList().run()}
-        >
-          <List className="w-4 h-4" />
-        </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        className={`editor-button ${editor.isActive("bulletList") ? "is-active text-blue-500" : "text-gray-900 dark:text-white"} hover:bg-gray-200 dark:hover:bg-gray-700`}
+        onClick={() => editor.chain().focus().toggleBulletList().run()}
+      >
+        <List className="w-4 h-4" />
+      </Button>
 
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`editor-button ${
-            editor.isActive("orderedList") ? "is-active" : ""
-          }`}
-          onClick={() => editor.chain().focus().toggleOrderedList().run()}
-        >
-          <ListOrdered className="w-4 h-4" />
-        </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        className={`editor-button ${editor.isActive("orderedList") ? "is-active text-blue-500" : "text-gray-900 dark:text-white"} hover:bg-gray-200 dark:hover:bg-gray-700`}
+        onClick={() => editor.chain().focus().toggleOrderedList().run()}
+      >
+        <ListOrdered className="w-4 h-4" />
+      </Button>
 
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`editor-button ${
-            editor.isActive("blockquote") ? "is-active" : ""
-          }`}
-          onClick={() => editor.chain().focus().toggleBlockquote().run()}
-        >
-          <Quote className="w-4 h-4" />
-        </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        className={`editor-button ${editor.isActive("blockquote") ? "is-active text-blue-500" : "text-gray-900 dark:text-white"} hover:bg-gray-200 dark:hover:bg-gray-700`}
+        onClick={() => editor.chain().focus().toggleBlockquote().run()}
+      >
+        <Quote className="w-4 h-4" />
+      </Button>
 
-        <Separator orientation="vertical" className="h-6 mx-1" />
+      <Separator orientation="vertical" className="h-6 mx-1" />
 
-        <Button
-          variant="ghost"
-          size="sm"
-          className="editor-button"
-        >
-          <LinkIcon className="w-4 h-4" />
-        </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        className="editor-button text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
+      >
+        <LinkIcon className="w-4 h-4" />
+      </Button>
 
-        <Separator orientation="vertical" className="h-6 mx-1" />
+      <Separator orientation="vertical" className="h-6 mx-1" />
 
-        <Button
-          variant="ghost"
-          size="sm"
-          className="editor-button"
-          onClick={() => editor.chain().focus().undo().run()}
-          disabled={!editor.can().undo()}
-        >
-          <Undo className="w-4 h-4" />
-        </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        className="editor-button text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
+        onClick={() => editor.chain().focus().undo().run()}
+        disabled={!editor.can().undo()}
+      >
+        <Undo className="w-4 h-4" />
+      </Button>
 
-        <Button
-          variant="ghost"
-          size="sm"
-          className="editor-button"
-          onClick={() => editor.chain().focus().redo().run()}
-          disabled={!editor.can().redo()}
-        >
-          <Redo className="w-4 h-4" />
-        </Button>
-      </div>
+      <Button
+        variant="ghost"
+        size="sm"
+        className="editor-button text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
+        onClick={() => editor.chain().focus().redo().run()}
+        disabled={!editor.can().redo()}
+      >
+        <Redo className="w-4 h-4" />
+      </Button>
     </div>
   );
 }

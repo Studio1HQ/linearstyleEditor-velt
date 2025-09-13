@@ -71,28 +71,30 @@ const RichTextEditor = () => {
   };
 
   return (
-    <div className="border-gray-700 overflow-hidden hide-scrollbar w-full min-h-56 p-4 border-2 border-dashed border-white/30 rounded-lg focus-within:border-[#101113] focus-within:bg-[#101113] dark:border-[1px] dark:focus-within:bg-[#101113] dark:focus-within:border-white text-white">
-      <EditorToolbar editor={editor} />
-      {/* Bubble Menu with comment button */}
-      {editor && (
-        <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
-          <div className="bubble-menu">
-            <Button
-              variant="outline"
-              onClick={onClickComments}
-              className="bg-[#101113] p-2 flex items-center justify-center rounded-full"
-            >
-              <MessageCircle color="white" />
-            </Button>
-          </div>
-        </BubbleMenu>
-      )}
+<div className="border-gray-300 dark:border-gray-700 overflow-hidden hide-scrollbar w-full min-h-56 p-4 border-2 border-dashed border-white/30 rounded-lg focus-within:border-[#101113] focus-within:bg-black/10 dark:focus-within:bg-[#101113] dark:focus-within:border-white text-gray-900 dark:text-white 
+   focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-300">
+  <EditorToolbar editor={editor} />
+  
+  {/* Bubble Menu with comment button */}
+  {editor && (
+    <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
+      <div className="bubble-menu">
+        <Button
+          variant="outline"
+          onClick={onClickComments}
+          className="bg-[#101113] p-2 flex items-center justify-center rounded-full focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-300"
+        >
+          <MessageCircle color="white" />
+        </Button>
+      </div>
+    </BubbleMenu>
+  )}
 
-      {/* Editor Content */}
-      <EditorContent
-        editor={editor}
-      />
-    </div>
+  {/* Editor Content */}
+  <EditorContent editor={editor} />
+</div>
+
+
   );
 };
 

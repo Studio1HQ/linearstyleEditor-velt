@@ -16,8 +16,8 @@ import { Separator } from "@/components/ui/separator";
 
 export function RightSidebar() {
   return (
-    <div className="w-80 bg-[#101113] border-l border-gray-800 p-6 hidden sm:block">
-      <div className="w-full flex justify-between items-start gap-2 text-gray-400 hover:text-gray-200">
+    <div className="w-80 bg-white dark:bg-[#101113] border-l border-gray-200 dark:border-gray-800 p-6 hidden sm:block">
+      <div className="w-full flex justify-between items-start gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">
         <p>Properties</p>
         <div className="flex justify-start items-start gap-2 mb-4">
           <Link className="w-4 h-4" />
@@ -29,7 +29,7 @@ export function RightSidebar() {
         <div>
           <Button
             variant="ghost"
-            className="w-full justify-start gap-2 text-gray-400 hover:text-gray-200"
+            className="w-full justify-start gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
           >
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-orange-400" />
@@ -39,7 +39,7 @@ export function RightSidebar() {
 
           <Button
             variant="ghost"
-            className="w-full justify-start gap-2 text-gray-400 hover:text-gray-200"
+            className="w-full justify-start gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
           >
             <AlertCircle className="w-4 h-4" />
             <span className="hidden sm:block">Set priority</span>
@@ -47,39 +47,39 @@ export function RightSidebar() {
 
           <Button
             variant="ghost"
-            className="w-full justify-start gap-2 text-gray-400 hover:text-gray-200"
+            className="w-full justify-start gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
           >
             <User className="w-4 h-4" />
             <span className="hidden sm:block">Assign</span>
           </Button>
         </div>
 
-        <Separator className="bg-gray-800" />
+        <Separator className="bg-gray-800 dark:bg-gray-700" />
 
         {/* Labels */}
         <div className="space-y-3">
-          <h3 className="text-sm font-medium text-gray-300 hidden sm:block">
+          <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300 hidden sm:block">
             Labels
           </h3>
           <Button
             variant="ghost"
-            className="w-full justify-start gap-2 text-gray-400 hover:text-gray-200"
+            className="w-full justify-start gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
           >
             <Tag className="w-4 h-4" />
             <span className="hidden sm:block">Add label</span>
           </Button>
         </div>
 
-        <Separator className="bg-gray-800" />
+        <Separator className="bg-gray-800 dark:bg-gray-700" />
 
         {/* Project */}
         <div className="space-y-3">
-          <h3 className="text-sm font-medium text-gray-300 hidden sm:block">
+          <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300 hidden sm:block">
             Project
           </h3>
-          <div className="flex items-center gap-2 text-gray-400 hover:text-gray-200">
-            <Box className="w-4 h-4" />{" "}
-            <span className="text-sm text-gray-200 hidden sm:block">
+          <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 cursor-pointer">
+            <Box className="w-4 h-4" />
+            <span className="text-sm  text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200  hidden sm:block">
               Social Media
             </span>
           </div>

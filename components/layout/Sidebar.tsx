@@ -52,10 +52,10 @@ export function Sidebar() {
     <div
       className={`${
         isSidebarExpanded ? "w-64" : "w-20"
-      } bg-white dark:bg-[#101113] border-r border-gray-800 flex flex-col transition-all duration-300 ease-in-out max-h-screen overflow-scroll hide-scrollbar`}
+      } bg-white dark:bg-[#181A1B] border-r border-gray-200 dark:border-gray-800 flex flex-col transition-all duration-300 ease-in-out max-h-screen overflow-scroll hide-scrollbar`}
     >
       {/* Header */}
-      <div className="p-4 border-b border-gray-800">
+      <div className="p-4 border-b border-gray-200 dark:border-gray-800">
         <div
           className={`flex items-center ${
             isSidebarExpanded ? "justify-between" : "justify-center"
@@ -66,7 +66,7 @@ export function Sidebar() {
               <Zap className="w-5 h-5 text-white" />
             </div>
             <span
-              className={`font-semibold text-gray-100 inline-flex items-center gap-[0.2px] ${
+              className={`font-semibold text-gray-900 dark:text-gray-100 inline-flex items-center gap-[0.2px] ${
                 isSidebarExpanded ? "inline-flex" : "hidden"
               }`}
             >
@@ -77,11 +77,11 @@ export function Sidebar() {
             <div className="flex items-center gap-1">
               {/* Toggle Sidebar Button (Search or SquarePen Icon) */}
               <Search
-                className="p-2 w-8 h-8 text-gray-400 hover:text-white hover:bg-gray-800 cursor-pointer rounded-full"
+                className="p-2 w-8 h-8 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer rounded-full"
                 onClick={toggleSidebar}
               />
               <SquarePen
-                className="p-2 w-8 h-8 text-gray-400 hover:text-white hover:bg-gray-800 cursor-pointer rounded-full"
+                className="p-2 w-8 h-8 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer rounded-full"
                 onClick={toggleSidebar}
               />
             </div>
@@ -98,7 +98,7 @@ export function Sidebar() {
             className={`w-full justify-start gap-3 h-9 ${
               selectedItem === item.label
                 ? "bg-gray-800 text-gray-100"
-                : "text-gray-400 hover:text-gray-200 hover:bg-gray-800"
+                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
             }`}
             onClick={() => setSelectedItem(item.label)}
           >
@@ -115,12 +115,12 @@ export function Sidebar() {
           </Button>
         ))}
 
-        <Separator className="my-4 bg-gray-800" />
+        <Separator className="my-4 bg-gray-800 dark:bg-gray-700" />
 
         {/* Workspace Section */}
         <div className="space-y-2">
           {isSidebarExpanded && (
-            <div className="flex items-center gap-2 text-sm text-gray-400 px-3">
+            <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 px-3">
               <span>Workspace</span>
               <ChevronDown className="w-3 h-3" />
             </div>
@@ -128,21 +128,21 @@ export function Sidebar() {
 
           <Button
             variant="ghost"
-            className="w-full justify-start gap-3 h-9 hover:text-orange-300 hover:bg-gray-800"
+            className="w-full group justify-start gap-3 h-9 text-orange-300 hover:text-orange-400 dark:hover:text-orange-400 hover:bg-gray-200 dark:hover:bg-gray-700"
           >
-            <Database className="w-4 h-4 text-orange-500" />
+            <Database className="w-4 h-4 text-orange-300 hover:text-orange-400 group-hover:text-orange-400" />
             <span className={`${isSidebarExpanded ? "block" : "hidden"}`}>
-               DevRel
+              DevRel
             </span>
           </Button>
         </div>
 
-        <Separator className="my-4 bg-gray-800" />
+        <Separator className="my-4 bg-gray-800 dark:bg-gray-700" />
 
         <div className="space-y-2">
           {/* Team Section */}
           {isSidebarExpanded && (
-            <div className="flex items-center gap-2 text-sm text-gray-400 px-3">
+            <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 px-3">
               <span>Your teams</span>
               <ChevronDown className="w-3 h-3" />
             </div>
@@ -152,7 +152,7 @@ export function Sidebar() {
             <Button
               key={item.label}
               variant="ghost"
-              className="w-full justify-start gap-3 h-9 text-gray-400 hover:text-gray-200 hover:bg-gray-800"
+              className="w-full justify-start gap-3 h-9 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
             >
               <item.icon className="w-4 h-4" />
               <span className={`${isSidebarExpanded ? "block" : "hidden"}`}>
@@ -162,16 +162,16 @@ export function Sidebar() {
           ))}
         </div>
 
-        <Separator className="my-4 bg-gray-800" />
+        <Separator className="my-4 bg-gray-800 dark:bg-gray-700" />
       </div>
       {!isSidebarExpanded ? (
         <ChevronRight
-          className={`mx-auto p-2 w-8 h-8 text-gray-400 hover:text-white hover:bg-gray-800 cursor-pointer rounded-full`}
+          className={`mx-auto p-2 w-8 h-8 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer rounded-full`}
           onClick={toggleSidebar}
         />
       ) : (
         <ChevronLeft
-          className={`ml-auto p-2 w-8 h-8 text-gray-400 hover:text-white hover:bg-gray-800 cursor-pointer rounded-full`}
+          className={`ml-auto p-2 w-8 h-8 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer rounded-full`}
           onClick={toggleSidebar}
         />
       )}
