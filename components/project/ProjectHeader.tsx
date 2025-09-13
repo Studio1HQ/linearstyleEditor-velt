@@ -3,7 +3,6 @@
 import {
   ArrowLeft,
   ChevronDown,
-  ChevronLeft,
   ChevronRight,
   Database,
   Ellipsis,
@@ -21,25 +20,20 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
 import { Button } from "@/components/ui/button";
-import {
-  useSetDocument,
-  useVeltClient,
-  VeltCommentsSidebar,
-  VeltNotificationsTool,
-  VeltSidebarButton,
-} from "@veltdev/react";
+import { useVeltClient, VeltCommentsSidebar, VeltNotificationsTool, VeltSidebarButton } from "@veltdev/react";
 import { names, userIds, useUserStore } from "@/helper/userdb";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 export function ProjectHeader() {
   const { user, setUser } = useUserStore();
   const { client } = useVeltClient();
+  const prevUserRef = useRef(user);
+  const isInitializingRef = useRef(false); // Prevent overlapping initialization calls
+
   const predefinedUsers = useMemo(
     () =>
       userIds.map((uid, index) => {
-        // Use DiceBear Avatars for demonstration
         const avatarUrls = [
           "https://api.dicebear.com/7.x/pixel-art/svg?seed=Nany",
           "https://api.dicebear.com/7.x/pixel-art/svg?seed=Mary",
@@ -54,6 +48,7 @@ export function ProjectHeader() {
     []
   );
 
+  // Initialize user from localStorage if none exists
   useEffect(() => {
     if (typeof window !== "undefined" && !user) {
       const storedUser = localStorage.getItem("user-storage");
@@ -62,20 +57,50 @@ export function ProjectHeader() {
       }
     }
   }, [user, setUser, predefinedUsers]);
-  useSetDocument("linearStyleEditor", { documentName: "linearStyleEditor" });
 
+  // Handle Velt client initialization, user identification, and document setting
   useEffect(() => {
-    if (!client || !user) return;
-    const veltUser = {
-      userId: user.uid,
-      organizationId: "organization_id",
-      name: user.displayName,
-      email: user.email,
-      photoUrl: user.photoUrl, // Pass avatar to Velt
+    if (!client || !user || isInitializingRef.current) {
+      console.log("Velt init skipped:", { client: !!client, user: !!user, initializing: isInitializingRef.current });
+      return;
+    }
+
+    const initializeVelt = async () => {
+      isInitializingRef.current = true;
+      try {
+        // Detect user switch
+        const isUserSwitch = prevUserRef.current?.uid !== user.uid;
+        prevUserRef.current = user;
+
+        console.log("Starting Velt init for user:", user.uid, { isUserSwitch });
+
+        // Re-identify the user (handles initial and switches)
+        const veltUser = {
+          userId: user.uid,
+          organizationId: "organization_id",
+          name: user.displayName,
+          email: user.email,
+          photoUrl: user.photoUrl,
+        };
+        await client.identify(veltUser);
+        console.log("Velt user identified:", veltUser.userId);
+        await client.setDocuments([
+          {
+            id: "linearStyleEditor",
+            metadata: { documentName: "linearStyleEditor" },
+          },
+        ]);
+        console.log("Velt documents set: linearStyleEditor");
+      } catch (error) {
+        console.error("Error initializing Velt:", error);
+      } finally {
+        isInitializingRef.current = false;
+      }
     };
 
-    client.identify(veltUser);
-  }, [client, user]);
+    initializeVelt();
+  }, [client, user]); // Re-run on client or user change
+
   return (
     <div className="border-b border-gray-800 p-6">
       <div className="flex flex-col sm:flex-row items-center justify-between">
@@ -87,7 +112,7 @@ export function ProjectHeader() {
           <div className="bg-yellow-500/40 p-1 rounded">
             <Database className="text-yellow-400 w-4 h-4" />
           </div>
-           DevRel
+          DevRel
           <ChevronRight className="w-4 h-4 text-gray-500" />
           KST-12
           <Star className="w-4 h-4 text-gray-400" />
@@ -153,7 +178,7 @@ export function ProjectHeader() {
                 </DropdownMenuItem>
               ))}
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="flex items-center space-x-2 text-blue-600 hover:dark:bg-[#515881] ">
+              <DropdownMenuItem className="flex items-center space-x-2 text-blue-600 hover:dark:bg-[#515881]">
                 <User size={16} />
                 <span className="hover:dark:text-white/70">Manage Users</span>
               </DropdownMenuItem>
