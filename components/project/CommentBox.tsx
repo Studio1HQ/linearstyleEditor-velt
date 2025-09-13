@@ -1,24 +1,35 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Send, Paperclip, Smile } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
+import { useState } from "react";
+import { Send, Paperclip, Smile } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { VeltInlineCommentsSection } from "@veltdev/react";
 
 export function CommentBox() {
-  const [comment, setComment] = useState('');
+  const [comment, setComment] = useState("");
 
   const handleSubmit = () => {
     if (comment.trim()) {
       // Handle comment submission
-      console.log('Submitting comment:', comment);
-      setComment('');
+      console.log("Submitting comment:", comment);
+      setComment("");
     }
   };
 
   return (
     <div className="space-y-3">
-      <div className="relative">
+      <section id="container-id">
+        <VeltInlineCommentsSection
+          multiThread={true}
+          targetElementId="container-id"
+          shadowDom={false}
+          dialogVariant="dialog-variant"
+          variant="inline-section-variant"
+          darkMode={true}
+        />
+      </section>
+      {/* <div className="relative">
         <Textarea
           placeholder="Leave a comment..."
           value={comment}
@@ -45,7 +56,7 @@ export function CommentBox() {
           <Send className="w-4 h-4 mr-2" />
           Comment
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 }
