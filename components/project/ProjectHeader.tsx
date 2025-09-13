@@ -159,7 +159,7 @@ export function ProjectHeader() {
               <Button
                 variant="outline"
                 size="sm"
-                className="flex items-center space-x-2 h-8 bg-white  text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200  dark:bg-[#2f3349] dark:border dark:border-white/30 dark:!bg-[#121212] dark:hover:!bg-gray-700"
+                className="flex items-center space-x-2 h-8 bg-white  text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-200  dark:border dark:border-white/30 dark:!bg-[#121212] dark:hover:!bg-gray-700"
               >
                 <Avatar className="w-5 h-5">
                   <AvatarImage
