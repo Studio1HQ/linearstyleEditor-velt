@@ -21,9 +21,15 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { useVeltClient, VeltCommentsSidebar, VeltNotificationsTool, VeltSidebarButton } from "@veltdev/react";
+import {
+  useVeltClient,
+  VeltCommentsSidebar,
+  VeltNotificationsTool,
+  VeltSidebarButton,
+} from "@veltdev/react";
 import { names, userIds, useUserStore } from "@/helper/userdb";
 import { useEffect, useMemo, useRef } from "react";
+import useTheme, { ThemeToggleButton } from "@/hooks/useTheme";
 
 export function ProjectHeader() {
   const { user, setUser } = useUserStore();
@@ -61,7 +67,11 @@ export function ProjectHeader() {
   // Handle Velt client initialization, user identification, and document setting
   useEffect(() => {
     if (!client || !user || isInitializingRef.current) {
-      console.log("Velt init skipped:", { client: !!client, user: !!user, initializing: isInitializingRef.current });
+      console.log("Velt init skipped:", {
+        client: !!client,
+        user: !!user,
+        initializing: isInitializingRef.current,
+      });
       return;
     }
 
@@ -100,6 +110,7 @@ export function ProjectHeader() {
 
     initializeVelt();
   }, [client, user]); // Re-run on client or user change
+  const { theme } = useTheme();
 
   return (
     <div className="border-b border-gray-800 p-6">
@@ -184,7 +195,9 @@ export function ProjectHeader() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <VeltNotificationsTool darkMode={true} />
+          <VeltNotificationsTool darkMode={theme === "dark"} />
+          <ThemeToggleButton />
+
           <Button variant="ghost" size="sm" className="text-gray-400">
             <Share className="w-4 h-4" />
           </Button>
@@ -194,8 +207,8 @@ export function ProjectHeader() {
           <Button variant="ghost" size="sm" className="text-gray-400">
             <MoreHorizontal className="w-4 h-4" />
           </Button>
-          <VeltSidebarButton darkMode={true} />
-          <VeltCommentsSidebar darkMode={true} />
+          <VeltSidebarButton darkMode={theme === "dark"} />
+          <VeltCommentsSidebar darkMode={theme === "dark"} />
         </div>
       </div>
     </div>
