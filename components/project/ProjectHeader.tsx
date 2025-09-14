@@ -115,7 +115,7 @@ export function ProjectHeader() {
 
   return (
     <div
-      className={`p-6 ${
+      className={`p-4 lg:p-6 ${
         theme === "dark" ? "bg-[#121212]" : "bg-white"
       } border-b ${theme === "dark" ? "border-gray-700" : "border-gray-300"}`}
     >
@@ -154,7 +154,7 @@ export function ProjectHeader() {
         </div>
 
         {/* Right Section: Share, Star, More, and Sidebar Button */}
-        <div className="flex items-center gap-2 mt-4 sm:mt-0">
+        <div className="flex items-center gap-2 mt-4 sm:mt-0 flex-wrap">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button

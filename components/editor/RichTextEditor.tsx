@@ -71,7 +71,7 @@ const RichTextEditor = () => {
   };
 
   return (
-<div className="border-gray-300 dark:border-gray-700 overflow-hidden hide-scrollbar w-full min-h-56 p-4 border-2 border-dashed border-white/30 rounded-lg focus-within:border-[#101113] focus-within:bg-black/10 dark:focus-within:bg-[#101113] dark:focus-within:border-white text-gray-900 dark:text-white 
+<div className="border-gray-300 dark:border-gray-700 overflow-hidden hide-scrollbar w-full min-h-56 p-2 lg:p-4 border-2 border-dashed border-white/30 rounded-lg focus-within:border-[#101113] focus-within:bg-black/10 dark:focus-within:bg-[#101113] dark:focus-within:border-white text-gray-900 dark:text-white 
    focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-300">
   <EditorToolbar editor={editor} />
   
