@@ -46,7 +46,7 @@ A collaborative email composer built with Next.js, React, Tailwind CSS, and [Vel
 2. Navigate to the `linearStyleEditor` directory
 
    ```bash
-   cd customerio-velt-example
+   cd linearStyleEditor
    ```
 
 3. Install dependencies:
