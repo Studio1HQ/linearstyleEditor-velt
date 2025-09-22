@@ -1,19 +1,20 @@
 "use client";
 import { MainLayout } from "@/components/layout/MainLayout";
-import { ThemeProvider } from "@/hooks/useTheme";
-import { VeltComments, VeltProvider } from "@veltdev/react";
+import useTheme from "@/hooks/useTheme";
+import { VeltComments } from "@veltdev/react";
+import React from "react";
 
 export default function Home() {
+  const {theme}=useTheme()
   return (
-    <VeltProvider apiKey={process.env.NEXT_PUBLIC_VELT_ID!}>
-      <ThemeProvider>
+      <React.Fragment>
         <MainLayout />
         <VeltComments
           textMode={false}
           shadowDom={false}
           textCommentToolShadowDom={false}
+          darkMode={theme=="dark"}
         />
-      </ThemeProvider>
-    </VeltProvider>
+      </React.Fragment>
   );
 }
