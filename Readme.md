@@ -1,12 +1,12 @@
 # Linear Style Editor Velt Example (Next.js)
 
-A collaborative email composer built with Next.js, React, Tailwind CSS, and [Velt](https://velt.dev), demonstrating real-time commenting and multi-user collaboration for modern SaaS applications.
+A collaborative thread  built with Next.js, React, Tailwind CSS, and [Velt](https://velt.dev), demonstrating real-time commenting and multi-user collaboration for modern SaaS applications.
 
 ---
 
 ## Features
 
-- ✉️ **Email Composer**: Compose, edit, and format emails with a rich text editor (Tiptap).
+- ✉️ **Thread Composer**: Edit and style the Text with a rich text editor (Tiptap).
 - 🧑‍🤝‍🧑 **Multi-User Support**: Switch between predefined users with avatars.
 - 💬 **Real-Time Comments**: Add and view collaborative comments using Velt.
 - 🌓 **Dark/Light Theme**: Toggle between dark and light modes.
