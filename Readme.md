@@ -1,6 +1,6 @@
 # Linear Style Editor Velt Example (Next.js)
 
-A collaborative interface built with Next.js, React, Tailwind CSS, and Velt, inspired by the clean and modern design of Linear Style. It features real-time commenting, multi-user collaboration, and a sleek UI optimized for modern SaaS applications.
+Linear Style Collaborative Issue Page, where we built Linear issue page clone with velt features
 ---
 
 ## Features
