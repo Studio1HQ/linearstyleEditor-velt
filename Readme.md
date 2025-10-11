@@ -1,12 +1,11 @@
 # Linear Style Editor Velt Example (Next.js)
 
-A collaborative thread  built with Next.js, React, Tailwind CSS, and [Velt](https://velt.dev), demonstrating real-time commenting and multi-user collaboration for modern SaaS applications.
-
+A collaborative interface built with Next.js, React, Tailwind CSS, and Velt, inspired by the clean and modern design of Linear Style. It features real-time commenting, multi-user collaboration, and a sleek UI optimized for modern SaaS applications.
 ---
 
 ## Features
 
-- ✉️ **Thread Composer**: Edit and style the Text with a rich text editor (Tiptap).
+- 📝 **Rich Text Composer**: Create and style content using a rich text editor powered by Tiptap.
 - 🧑‍🤝‍🧑 **Multi-User Support**: Switch between predefined users with avatars.
 - 💬 **Real-Time Comments**: Add and view collaborative comments using Velt.
 - 🌓 **Dark/Light Theme**: Toggle between dark and light modes.
