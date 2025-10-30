@@ -39,7 +39,7 @@ Linear Style Collaborative Issue Page, where we built Linear issue page clone wi
 1. Clone the repository
 
    ```bash
-   git clone ------
+   git clone https://github.com/Studio1HQ/linearstyleEditor-velt.git
    ```
 
 2. Navigate to the `linearStyleEditor` directory
